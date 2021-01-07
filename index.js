@@ -64,8 +64,6 @@ app.use(mountPath, api.app);
 
 // Mounts the GraphQL API using graphQLPath: '/graphql'
 parseGraphQLServer.applyGraphQL(app);
-// (Optional) Mounts the GraphQL Playground - do NOT use in Production
-parseGraphQLServer.applyPlayground(app);
 
 app.use('/dashboard', dashboard);
 
