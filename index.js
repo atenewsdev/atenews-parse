@@ -24,7 +24,7 @@ const api = new ParseServer({
 });
 
 const parseGraphQLServer = new ParseGraphQLServer(
-  parseServer,
+  api,
   {
     graphQLPath: '/graphql',
     playgroundPath: '/playground'
@@ -58,7 +58,7 @@ app.use('/public', express.static(path.join(__dirname, '/public')));
 
 // Serve the Parse API on the /parse URL prefix
 var mountPath = process.env.PARSE_MOUNT || '/parse';
-app.use(mountPath, api);
+app.use(mountPath, api.app);
 
 // Mounts the GraphQL API using graphQLPath: '/graphql'
 parseGraphQLServer.applyGraphQL(app);
