@@ -39,7 +39,7 @@ const dashboard = new ParseDashboard({
       appId: process.env.APP_ID,
       masterKey: process.env.MASTER_KEY,
       appName: "Atenews",
-      graphQLServerURL: process.env.SERVER_URL.replace('parse', 'graphql')
+      graphQLServerURL: process.env.SERVER_URL.replace('/parse', '/graphql')
     }
   ],
   users: [
